@@ -1,34 +1,61 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Portfolio 2
+
+![portfolio2](https://user-images.githubusercontent.com/70141648/173202369-78552031-788b-4249-a5a1-f3c5470f7591.png)
+
+
+## Brief / Description
+Create a portfolio website that showcases three prior projects from the past year.
+These three projects should be listed:
+
+   - Semester Project 2
+   - JavaScript Frameworks CA
+   - Project Exam 2
+
+
+## Built With
+
+
+- Next.js
+- Chakra-ui
 
 ## Getting Started
 
-First, run the development server:
+### Installing
+
+This is where you list how to get the project started. It typically just includes telling a person to clone the repo and then to install the dependencies e.g.
+
+1. Clone the repo:
 
 ```bash
-npm run dev
-# or
-yarn dev
+https://github.com/ineaw/portfolio-2-feu.git
 ```
 
+2. Install the dependencies:
+
+```
+yarn install
+```
+
+### Running
+
+
+To run the app, run the following commands:
+
+```bash
+yarn dev
+```
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Contact
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+This is where you can leave your social links for people to contact you, such as a LinkedIn profile or Twitter link e.g.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+[My Twitter page](www.twitter.com)
 
-## Learn More
+[My LinkedIn page](www.linkedin.com)
 
-To learn more about Next.js, take a look at the following resources:
+## Acknowledgments
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+This is where you can add any acknowledgements if you'd like, such as to people who have helped you or any code snippets you'd like to mention. You can delete this section if you don't have any acknowledgements to make.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
