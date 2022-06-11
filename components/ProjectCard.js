@@ -40,24 +40,25 @@ export default function ProjectCard({
           transition="transform .5s ease-in-out"
           boxShadow={boxShadowColor[colorMode]}
           borderRadius={5}
+          justify="space-between"
+          h="100%"
         >
           <Flex
             p={[5, 15, 25]}
             flexDir="column"
             justify="space-between"
-            h="100%"
           >
             {image != "" ? (
               <Image
                 src={image}
-                width={800}
-                height={500}
+                width={700}
+                height={425}
                 objectFit="cover"
                 alt={title}
               />
             ) : null}
             <Box>
-              <Heading as="h3" size="lg" fontWeight="semibold" my={4}>
+              <Heading as="h3" fontSize="1.5rem" fontWeight="semibold" letterSpacing="tight" my={4}>
                 {title}
               </Heading>
               <Box
@@ -68,7 +69,8 @@ export default function ProjectCard({
               />
               <Text>{description}</Text>
             </Box>
-            <Flex justify="space-between" mt={2}>
+            </Flex>
+            <Flex justify="space-between" mt={2} px={2} pb={2}>
               <Flex align="center">
                 {demoLink && (
                   <NextLink href={demoLink} isExternal passHref>
@@ -121,7 +123,6 @@ export default function ProjectCard({
                   {language2}
                 </Text> */}
               </Flex>
-            </Flex>
           </Flex>
         </Flex>
       </Link>

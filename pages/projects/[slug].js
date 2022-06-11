@@ -22,16 +22,17 @@ export default function PostPage({ source, frontMatter }) {
     <>
       <Container>
         <Navbar />
-        <Link href="/">
-          <a>👈 Go back home</a>
-        </Link>
         <Main>
           <Heading as="h1">{frontMatter.title}</Heading>
           {frontMatter.Image != "" ? (
             <Image src={frontMatter.image} alt={frontMatter.alt} />
           ) : null}
-          {frontMatter.description && <Text>{frontMatter.description}</Text>}
-          <MDXRemote {...source} components={components} />
+          {/* {frontMatter.description && <Text>{frontMatter.description}</Text>} */}
+          <Heading as="h2">Project description</Heading>
+          <MDXRemote {...source} />
+          <Link href="/">
+          <a>👈 Go back home</a>
+        </Link>
         </Main>
         <Footer>
           <Stack direction="column" textAlign="center" color="text">

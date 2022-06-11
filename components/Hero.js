@@ -4,13 +4,13 @@ export const Hero = ({ title, subtitleTop, subtitleBtm }) => (
   <Flex
     justifyContent="center"
     alignItems="center"
-    height="35vh"
+    height="30vh"
     direction="column"
     bgGradient="linear(to-l, heroGradientStart, heroGradientEnd)"
     bgClip="text"
   >
     <Text fontSize="lg">{subtitleTop}</Text>
-    <Heading as="h1" fontSize={["3xl", "5xl", "6xl", "8xl"]}>
+    <Heading as="h1" fontSize={["4xl", "5xl", "6xl", "8xl"]}>
       {title}
     </Heading>
     <Text fontSize={["xs", "md", "lg", "lg"]}>{subtitleBtm}</Text>

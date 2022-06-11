@@ -66,7 +66,7 @@ const Index = ({ projects }) => (
           >
             My Featured Projects 🎨
           </Heading>
-          <SimpleGrid columns={[1, 2, 3]} spacing={6} py={8} mt={10} mb={20}>
+          <SimpleGrid columns={[1, 2, 3]} spacing={6} py={4} mb={10}>
             {projects.map((project) => (
               <ProjectCard
                 key={project.filePath}
