@@ -93,10 +93,10 @@ const Index = ({ projects }) => (
               </Text>
             </ListItem>
             <ListItem>
-              <ListIcon as={BsLinkedin} color="green.500" />
+              <ListIcon as={BsLinkedin} color="text" />
               <ChakraLink
                 isExternal
-                href="https://www.linkedin.com/"
+                href="https://www.linkedin.com/ineaw"
                 flexGrow={1}
                 mr={2}
               >
@@ -104,7 +104,7 @@ const Index = ({ projects }) => (
               </ChakraLink>
             </ListItem>
             <ListItem alignItems="center">
-              <ListIcon as={BsGithub} fontSize="1.5rem" color="green.500" />
+              <ListIcon as={BsGithub} fontSize="1.5rem" color="text" />
               <ChakraLink
                 isExternal
                 href="https://github.com/ineaw"
