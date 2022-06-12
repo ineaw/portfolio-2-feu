@@ -14,7 +14,7 @@ import { BsGithub } from "react-icons/bs";
 
 export default function ProjectCard({
   title,
-  description,
+  excerpt,
   repoLink,
   demoLink,
   languageColor,
@@ -67,7 +67,7 @@ export default function ProjectCard({
                 transition="background-color .5s ease-in-out"
                 mb={4}
               />
-              <Text>{description}</Text>
+              <Text>{excerpt}</Text>
             </Box>
             </Flex>
             <Flex justify="space-between" mt={2} px={2} pb={2}>

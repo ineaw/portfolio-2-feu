@@ -72,7 +72,7 @@ const Index = ({ projects }) => (
                 key={project.filePath}
                 href={`${project.filePath.replace(/\.mdx?$/, "")}`}
                 title={project.data.title}
-                description={project.data.description}
+                excerpt={project.data.excerpt}
                 repoLink={project.data.repoLink}
                 demoLink={project.data.demoLink}
                 languageColor={project.data.languageColor}

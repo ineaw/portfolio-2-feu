@@ -1,9 +1,21 @@
 import { Image } from "@chakra-ui/image";
-import { Heading, Text, Stack, Code } from "@chakra-ui/layout";
+import {
+  Heading,
+  Text,
+  Stack,
+  Code,
+  Box,
+  Flex,
+  List,
+  ListItem,
+  ChakraLink,
+  ListIcon,
+} from "@chakra-ui/layout";
 import fs from "fs";
 import matter from "gray-matter";
 import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
+import dynamic from 'next/dynamic'
 import Head from "next/head";
 import Link from "next/link";
 import path from "path";
@@ -12,9 +24,13 @@ import { Footer } from "../../components/Footer";
 import { Main } from "../../components/Main";
 import Navbar from "../../components/Navbar";
 import { projectFilePath, PROJECTS_PATH } from "../../lib/mdxUtils";
+import { BsGithub } from "react-icons/bs";
+import { ExternalLinkIcon } from "@chakra-ui/icons";
+import TestComponent from "../../components/TestComponent";
 
 const components = {
   Head,
+  TestComponent: dynamic(() => import('../../components/TestComponent')),
 };
 
 export default function PostPage({ source, frontMatter }) {
@@ -25,14 +41,54 @@ export default function PostPage({ source, frontMatter }) {
         <Main>
           <Heading as="h1">{frontMatter.title}</Heading>
           {frontMatter.Image != "" ? (
-            <Image src={frontMatter.image} alt={frontMatter.alt} />
+            <Image
+              src={frontMatter.image}
+              alt={frontMatter.alt}
+              borderRadius={3}
+            />
           ) : null}
           {/* {frontMatter.description && <Text>{frontMatter.description}</Text>} */}
-          <Heading as="h2">Project description</Heading>
-          <MDXRemote {...source} />
+          <Flex flexDir="column">
+            <Heading as="h2" fontSize="2xl">
+              Project description
+            </Heading>
+            <Box maxWidth="35rem" py={4}>
+              <MDXRemote {...source} components={components} />
+            </Box>
+            <Box as="section">
+              <List spacing={3}>
+                <ListItem>
+                  <ListIcon
+                    as={ExternalLinkIcon}
+                    fontSize="1.5rem"
+                    color="green.500"
+                  />
+                  <Link
+                    isExternal
+                    href={frontMatter.demoLink}
+                    flexGrow={1}
+                    mr={2}
+                  >
+                    Check out the Live site
+                  </Link>
+                </ListItem>
+                <ListItem alignItems="center">
+                  <ListIcon as={BsGithub} fontSize="1.5rem" color="green.500" />
+                  <Link
+                    isExternal
+                    href={frontMatter.repoLink}
+                    flexGrow={1}
+                    mr={2}
+                  >
+                    Check out the repository
+                  </Link>
+                </ListItem>
+              </List>
+            </Box>
+          </Flex>
           <Link href="/">
-          <a>👈 Go back home</a>
-        </Link>
+            <a>👈 Go back home</a>
+          </Link>
         </Main>
         <Footer>
           <Stack direction="column" textAlign="center" color="text">
