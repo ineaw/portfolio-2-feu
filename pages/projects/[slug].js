@@ -8,14 +8,14 @@ import {
   Flex,
   List,
   ListItem,
-  ChakraLink,
+  useColorMode,
   ListIcon,
-} from "@chakra-ui/layout";
+} from "@chakra-ui/react";
 import fs from "fs";
 import matter from "gray-matter";
 import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
-import dynamic from 'next/dynamic'
+import dynamic from "next/dynamic";
 import Head from "next/head";
 import Link from "next/link";
 import path from "path";
@@ -26,14 +26,19 @@ import Navbar from "../../components/Navbar";
 import { projectFilePath, PROJECTS_PATH } from "../../lib/mdxUtils";
 import { BsGithub } from "react-icons/bs";
 import { ExternalLinkIcon } from "@chakra-ui/icons";
-import TestComponent from "../../components/TestComponent";
 
 const components = {
   Head,
-  TestComponent: dynamic(() => import('../../components/TestComponent')),
 };
 
 export default function PostPage({ source, frontMatter }) {
+  const { colorMode } = useColorMode();
+
+  const boxShadowColor = {
+    light: "0px 8px 24px rgba(0, 0, 0, 0.2)",
+    dark: "0px 8px 24px rgba(0, 0, 0, 0.6)",
+  };
+
   return (
     <>
       <Container>
@@ -45,9 +50,9 @@ export default function PostPage({ source, frontMatter }) {
               src={frontMatter.image}
               alt={frontMatter.alt}
               borderRadius={3}
+              boxShadow={boxShadowColor[colorMode]}
             />
           ) : null}
-          {/* {frontMatter.description && <Text>{frontMatter.description}</Text>} */}
           <Flex flexDir="column">
             <Heading as="h2" fontSize="2xl">
               Project description
@@ -111,7 +116,6 @@ export const getStaticProps = async ({ params }) => {
   const { content, data } = matter(source);
 
   const mdxSource = await serialize(content, {
-    // Optionally pass remark/rehype plugins
     mdxOptions: {
       remarkPlugins: [],
       rehypePlugins: [],
@@ -129,9 +133,7 @@ export const getStaticProps = async ({ params }) => {
 
 export const getStaticPaths = async () => {
   const paths = projectFilePath
-    // Remove file extensions for page paths
     .map((path) => path.replace(/\.mdx?$/, ""))
-    // Map the path into the static paths object required by Next.js
     .map((slug) => ({ params: { slug } }));
 
   return {

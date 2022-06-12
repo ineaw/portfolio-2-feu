@@ -112,16 +112,6 @@ export default function ProjectCard({
                 <Text fontSize={["xs", "sm"]} mr={2}>
                   {ui}
                 </Text>
-                {/* <Box
-                  w={3}
-                  h={3}
-                  mr={1}
-                  borderRadius="50%"
-                  bgColor={languageColor}
-                /> */}
-                {/* <Text fontSize="sm" color={colorSecondary[colorMode]}>
-                  {language2}
-                </Text> */}
               </Flex>
           </Flex>
         </Flex>
